@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
+
+  auth: boolean = false;
+
   title = 'front-hotel';
 
 
