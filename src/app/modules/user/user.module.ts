@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserRoutingModule } from './user-routing.module';
 import { LoginComponent } from './pages/login/login.component';
 import { CardLoginComponent } from './components/card-login/card-login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { CardLoginComponent } from './components/card-login/card-login.component
   imports: [
   CommonModule,
     UserRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class UserModule { }

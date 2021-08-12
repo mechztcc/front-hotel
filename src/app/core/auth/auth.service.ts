@@ -9,7 +9,7 @@ export class AuthService {
 
   validateSession() {
 
-    const session = localStorage.getItem('session')
+    const session = localStorage.getItem('token')
 
     if(session) {
       return true;
