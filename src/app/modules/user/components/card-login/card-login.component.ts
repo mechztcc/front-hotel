@@ -6,6 +6,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/modules/user/shared/auth.service';
 import { User } from '../../shared/user.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-card-login',
@@ -38,8 +39,23 @@ export class CardLoginComponent implements OnInit {
 
   formValidation() {
     if(this.form.invalid) {
+      Swal.fire({
+        title: 'Error',
+        text: 'Email ou senha incorretos!',
+        icon: 'error',
+        confirmButtonText: 'Tentar novamente'
+      });
 
+    } else {
+      this.setUserAuth();
+      this.auth();
     }
+  }
+
+  setUserAuth() {
+    this.user.email = this.form.controls.email.value;
+    this.user.password = this.form.controls.password.value;
+
   }
 
   auth() {
