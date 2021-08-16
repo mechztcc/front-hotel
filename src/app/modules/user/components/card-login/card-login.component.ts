@@ -62,10 +62,12 @@ export class CardLoginComponent implements OnInit {
     this.loading = true;
     this.authService.auth(this.user)
       .subscribe((data: any) => {
-          this.toastr.info('Vamos para home page...', 'Sucesso!', { timeOut: 1500, progressBar: true, progressAnimation: 'increasing' });
+          this.toastr.success('Vamos para home page...', 'Sucesso!', { timeOut: 1500, progressBar: true, progressAnimation: 'increasing' });
           setTimeout(() => {
             this.loading = false;
             this.saveSession(data);
+            console.log(data);
+
             this.route.navigate(['home'])
           }, 2000);
 
